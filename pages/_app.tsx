@@ -1,7 +1,7 @@
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { useEffect } from "react";
-import { assetPrefix } from "../src/utils";
+import urlFor from "../src/utils";
 import "./app.global.css";
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -14,7 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>TodoMVC</title>
-        <link rel="icon" href={`${assetPrefix}/favicon.ico`} />
+        <link rel="icon" href={urlFor("/favicon.ico")} />
       </Head>
       <Component {...pageProps} />
     </>

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { urlFor } from "../utils";
+import urlFor from "../utils";
 
 const AppNameHeader = styled.h1.attrs(() => ({
   children: <a href={urlFor("/")}>todos</a>,
