@@ -8,7 +8,8 @@ import {
 import styled, { css } from "styled-components";
 import { useClickCounter } from "./hooks";
 import Input from "./Input";
-import { StoreContext, Todo } from "./StoreContext";
+import { StoreContext } from "../data/StoreContext";
+import { Todo } from "../data/TodoStore";
 
 const fastTransition = css`
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);

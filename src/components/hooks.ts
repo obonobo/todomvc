@@ -1,5 +1,5 @@
 import { MutableRefObject, useCallback, useMemo, useState } from "react";
-import { Todo } from "./StoreContext";
+import { Todo } from "../data/TodoStore";
 
 type Filter = "all" | "complete" | "incomplete";
 
