@@ -5,9 +5,9 @@ const AppNameHeader = styled.h1.attrs(() => ({
   children: <a href={urlFor("/")}>todos</a>,
 }))`
   transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-  font: 100px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 5.5rem "Helvetica Neue", Helvetica, Arial, sans-serif;
   opacity: 50%;
-  margin: 0;
+  margin: 1.5rem 0 0.5rem 0;
   user-select: none;
   color: #ba3c23;
   opacity: 0.4;

@@ -1,6 +1,6 @@
 import { memo, useCallback, useContext, useMemo } from "react";
 import styled, { css } from "styled-components";
-import { StoreContext } from "./StoreContext";
+import { StoreContext } from "../data/StoreContext";
 
 const Button = memo(styled.span.attrs<{ $emptyList?: boolean }>({
   children: "^",

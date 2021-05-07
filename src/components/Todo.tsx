@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import styled from "styled-components";
 import AppNameHeader from "./AppNameHeader";
-import { StoreContextProvider } from "./StoreContext";
+import { StoreContextProvider } from "../data/StoreContext";
 import WhatNeedsToBeDone from "./WhatNeedsToBeDone";
 
 const Root = styled.div`

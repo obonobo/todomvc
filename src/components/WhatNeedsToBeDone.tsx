@@ -1,3 +1,5 @@
+/* eslint-disable no-unexpected-multiline */
+/* eslint-disable react/no-unused-prop-types */
 import {
   ChangeEvent,
   forwardRef,
@@ -7,15 +9,18 @@ import {
   ReactNode,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   useRef,
   useState,
 } from "react";
 import styled, { css } from "styled-components";
+import { saveList } from "../data/LocalStorageAccess";
+import { StoreContext } from "../data/StoreContext";
+import TodoStore, { Todo } from "../data/TodoStore";
 import FilterPicker from "./FilterPicker";
 import { Filter, useFilter, useScrollToBottomFunction } from "./hooks";
 import Input from "./Input";
-import { StoreContext, Todo, TodoStore } from "./StoreContext";
 import TodoItem from "./TodoItem";
 import ToggleSelectAll from "./ToggleSelectAll";
 
@@ -36,14 +41,14 @@ const PlaceholderText = styled.div.attrs<{ $emptyInput?: boolean }>(
   user-select: none;
   position: relative;
   text-align: left;
-  inset: -2em auto auto -50%;
-  transform: translate(83%, 0);
+  inset: -2em auto auto 3.2em;
   z-index: 100;
   color: rgba(160, 160, 160);
   opacity: 82.9%;
   font-style: italic;
   font-size: 1.6rem;
   width: fit-content;
+  justify-self: flex-start;
 
   ${({ $emptyInput }) =>
     !$emptyInput &&
@@ -64,9 +69,9 @@ const AppGrid = styled.div`
 
 const List = styled.div<{ children?: ReactNode[] }>`
   min-height: 5em;
-  max-height: 70vh;
+  max-height: calc(100vh + 2.1em - 21rem);
   width: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
   background: white;
   margin-top: -1em;
   z-index: 100;

@@ -11,7 +11,7 @@ import {
 } from "react";
 import styled, { css } from "styled-components";
 import { Filter } from "./hooks";
-import { StoreContext } from "./StoreContext";
+import { StoreContext } from "../data/StoreContext";
 
 const Grid = styled.div`
   display: grid;
