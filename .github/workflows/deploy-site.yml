@@ -50,6 +50,7 @@ jobs:
           yarn install --dev
           yarn add --dev typescript @types/react
           yarn deploy
+          cp CNAME docs/
           touch docs/.nojekyll
 
           git status
