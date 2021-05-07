@@ -12,7 +12,13 @@ import { ServerStyleSheet } from "styled-components";
  * match" bug that happens with Next.js SSR with styled-components and MUI.
  */
 export default class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
+  static async getInitialProps(
+    ctx: DocumentContext
+  ): Promise<{
+    styles: JSX.Element;
+    html: string;
+    head?: JSX.Element[];
+  }> {
     const sheetSC = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
 
@@ -38,7 +44,7 @@ export default class MyDocument extends Document {
     }
   }
 
-  render() {
+  render(): JSX.Element {
     return (
       <Html>
         <Head />
